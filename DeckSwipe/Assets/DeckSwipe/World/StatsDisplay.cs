@@ -11,6 +11,7 @@ namespace DeckSwipe.World {
 		public Image foodBar;
 		public Image healthBar;
 		public Image hopeBar;
+		public Image populationBar;
 		public float relativeMargin;
 		
 		private float minFillAmount;
@@ -31,6 +32,7 @@ namespace DeckSwipe.World {
 			foodBar.fillAmount = Mathf.Lerp(minFillAmount, maxFillAmount, Stats.FoodPercentage);
 			healthBar.fillAmount = Mathf.Lerp(minFillAmount, maxFillAmount, Stats.HealthPercentage);
 			hopeBar.fillAmount = Mathf.Lerp(minFillAmount, maxFillAmount, Stats.HopePercentage);
+			populationBar.fillAmount = Mathf.Lerp(minFillAmount, maxFillAmount, Stats.PopulationPercentage);
 		}
 		
 	}

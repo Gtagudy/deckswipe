@@ -68,7 +68,9 @@ namespace DeckSwipe.Gamestate {
 			}
 			VerifySpecialCards();
 		}
-
+		/// <summary>
+		/// This is where the dummy cards are
+		/// </summary>
 		private void PopulateFallback() {
 			Cards = new Dictionary<int, Card>();
 			Character placeholderPerson = new Character("Placeholder Person", defaultSprite);
@@ -76,22 +78,22 @@ namespace DeckSwipe.Gamestate {
 					"A",
 					"B",
 					placeholderPerson,
-					new ActionOutcome(-2, 4, -2, 2),
-					new ActionOutcome(2, 0, 2, -2),
+					new ActionOutcome(-2, 4, -2, 2, 0),
+					new ActionOutcome(2, 0, 2, -2, 0),
 					new List<ICardPrerequisite>()));
 			Cards.Add(1, new Card("Placeholder card 2",
 					"A",
 					"B",
 					placeholderPerson,
-					new ActionOutcome(-1, -1, -1, -1),
-					new ActionOutcome(2, 2, 2, 2),
+					new ActionOutcome(-1, -1, -1, -1, 0),
+					new ActionOutcome(2, 2, 2, 2, 0),
 					new List<ICardPrerequisite>()));
 			Cards.Add(2, new Card("Placeholder card 3",
 					"A",
 					"B",
 					placeholderPerson,
-					new ActionOutcome(1, 1, 0, -2),
-					new ActionOutcome(2, 2, -2, -4),
+					new ActionOutcome(1, 1, 0, -2, 0),
+					new ActionOutcome(2, 2, -2, -4, 0),
 					new List<ICardPrerequisite>()));
 		}
 
@@ -120,6 +122,13 @@ namespace DeckSwipe.Gamestate {
 			}
 			if (!SpecialCards.ContainsKey("gameover_hope")) {
 				SpecialCards.Add("gameover_hope", new SpecialCard("All hope among the people is lost.", "", "",
+						_defaultGameOverCharacter,
+						new GameOverOutcome(),
+						new GameOverOutcome()));
+			}
+			if (!SpecialCards.ContainsKey("gameover_population"))
+			{
+				SpecialCards.Add("gameover_population", new SpecialCard("The city has become barren, its people lost to the cold or worse.", "", "",
 						_defaultGameOverCharacter,
 						new GameOverOutcome(),
 						new GameOverOutcome()));

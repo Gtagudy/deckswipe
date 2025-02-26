@@ -1,0 +1,32 @@
+{
+    "id": 12,
+    "characterId": 8,
+    "cardText": "Alright Ima need all dat coal your got there",
+    "leftAction": {
+        "text": "TF, no thank you young slime",
+        "statsModification": {
+            "coal": 1,
+            "food": -2,
+            "health": 5,
+            "hope": -2,
+            "population": -3
+        },
+        "followup": [],
+        "specialFollowup": []
+    },
+    "rightAction": {
+        "text": "Good thing we're warm blooded huh?",
+        "statsModification": {
+            "coal": -16,
+            "food": 3,
+            "health": 3,
+            "hope": 3,
+            "population": 3
+
+        },
+        "followup": [],
+        "specialFollowup": []
+    },
+    "cardPrerequisites": [],
+    "specialCardPrerequisites": []
+}

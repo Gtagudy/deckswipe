@@ -321,7 +321,8 @@ namespace DeckSwipe.CardModel.Import {
 				if (protoSpecialCard.id == "gameover_coal"
 						|| protoSpecialCard.id == "gameover_food"
 						|| protoSpecialCard.id == "gameover_health"
-						|| protoSpecialCard.id == "gameover_hope") {
+						|| protoSpecialCard.id == "gameover_hope"
+						|| protoSpecialCard.id == "gameover_population") {
 					leftActionOutcome = new GameOverOutcome();
 					rightActionOutcome = new GameOverOutcome();
 				}

@@ -1,0 +1,32 @@
+{
+    "id": 11,
+    "characterId": 8,
+    "cardText": "GRAAGH Let me eat all your people!!!",
+    "leftAction": {
+        "text": "Oh nahh unc off the percs",
+        "statsModification": {
+            "coal": 1,
+            "food": 2,
+            "health": 5,
+            "hope": 2,
+            "population": 5
+        },
+        "followup": [],
+        "specialFollowup": []
+    },
+    "rightAction": {
+        "text": "Fine fine, guess that includes me too huh",
+        "statsModification": {
+            "coal": -4,
+            "food": 3,
+            "health": 3,
+            "hope": 3,
+            "population": -16
+
+        },
+        "followup": [],
+        "specialFollowup": []
+    },
+    "cardPrerequisites": [],
+    "specialCardPrerequisites": []
+}

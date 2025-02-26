@@ -1,0 +1,15 @@
+{
+    "id": "gameover_population",
+    "characterId": -1,
+    "cardText": "The city has become barren, its people lost to the cold or worse.",
+    "leftAction": {
+        "text": "",
+        "followup": [],
+        "specialFollowup": []
+    },
+    "rightAction": {
+        "text": "",
+        "followup": [],
+        "specialFollowup": []
+    }
+}

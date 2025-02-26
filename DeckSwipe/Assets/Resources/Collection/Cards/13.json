@@ -1,0 +1,32 @@
+{
+    "id": 13,
+    "characterId": 8,
+    "cardText": "I found some expired food, whats the plan",
+    "leftAction": {
+        "text": "Abit of mold won't hurt",
+        "statsModification": {
+            "coal": 1,
+            "food": 8,
+            "health": -14,
+            "hope": -2,
+            "population": -3
+        },
+        "followup": [],
+        "specialFollowup": []
+    },
+    "rightAction": {
+        "text": "Uhh.. how about we don't",
+        "statsModification": {
+            "coal": -4,
+            "food": 3,
+            "health": 3,
+            "hope": 3,
+            "population": 3
+
+        },
+        "followup": [],
+        "specialFollowup": []
+    },
+    "cardPrerequisites": [],
+    "specialCardPrerequisites": []
+}

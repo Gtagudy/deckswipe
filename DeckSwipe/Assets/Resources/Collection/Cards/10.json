@@ -1,0 +1,32 @@
+{
+    "id": 10,
+    "characterId": 8,
+    "cardText": "Yooo what up slime, dab me up",
+    "leftAction": {
+        "text": "Nahhh ghetto ahhhh",
+        "statsModification": {
+            "coal": 1,
+            "food": -2,
+            "health": 5,
+            "hope": -2,
+            "population": -3
+        },
+        "followup": [],
+        "specialFollowup": []
+    },
+    "rightAction": {
+        "text": "Yuhhhhh whats up my boy",
+        "statsModification": {
+            "coal": -4,
+            "food": 3,
+            "health": 3,
+            "hope": 3,
+            "population": 3
+
+        },
+        "followup": [],
+        "specialFollowup": []
+    },
+    "cardPrerequisites": [],
+    "specialCardPrerequisites": []
+}

@@ -152,13 +152,17 @@ namespace DeckSwipe.CardModel.Import.Resource {
 					cardRowData[i].values[4].IntValue,
 					cardRowData[i].values[5].IntValue,
 					cardRowData[i].values[6].IntValue,
-					cardRowData[i].values[7].IntValue);
+					cardRowData[i].values[7].IntValue,
+					cardRowData[i].values[8].IntValue
+					);
 				proto.rightAction.text = cardRowData[i].values[8].GetStringValue("");
 				proto.rightAction.statsModification = new StatsModification(
 					cardRowData[i].values[9].IntValue,
 					cardRowData[i].values[10].IntValue,
 					cardRowData[i].values[11].IntValue,
-					cardRowData[i].values[12].IntValue);
+					cardRowData[i].values[12].IntValue,
+					cardRowData[i].values[12].IntValue
+					);
 
 				var cardPrerequisites = JsonUtility.FromJson<JsonArray<ProtoCardPrerequisite>>(
 						cardRowData[i].values[13].StringValue);
