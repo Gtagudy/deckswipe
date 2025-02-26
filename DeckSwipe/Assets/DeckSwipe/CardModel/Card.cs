@@ -73,7 +73,27 @@ namespace DeckSwipe.CardModel {
 			rightSwipeOutcome.Perform(controller);
 		}
 
-		public void CheckPrerequisite(ICard dependency, CardStorage cardStorage) {
+        public void PreviewLeftDecision(Game controller)
+        {
+            //progress.Status |= CardStatus.LeftActionTaken;
+            //foreach (Card card in dependentCards)
+            //{
+            //    card.CheckPrerequisite(this, controller.CardStorage);
+            //}
+            leftSwipeOutcome.Preview(controller);
+        }
+
+        public void PreviewRightDecision(Game controller)
+        {
+            //progress.Status |= CardStatus.RightActionTaken;
+            //foreach (Card card in dependentCards)
+            //{
+            //    card.CheckPrerequisite(this, controller.CardStorage);
+            //}
+            rightSwipeOutcome.Preview(controller);
+        }
+
+        public void CheckPrerequisite(ICard dependency, CardStorage cardStorage) {
 			if (PrerequisitesSatisfied()
 					|| !unsatisfiedPrerequisites.ContainsKey(dependency)) {
 				dependency.RemoveDependentCard(this);

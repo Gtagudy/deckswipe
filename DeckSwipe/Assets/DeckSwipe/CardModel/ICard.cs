@@ -17,6 +17,8 @@ namespace DeckSwipe.CardModel {
 		void CardShown(Game controller);
 		void PerformLeftDecision(Game controller);
 		void PerformRightDecision(Game controller);
+		void PreviewLeftDecision(Game controller);
+		void PreviewRightDecision(Game controller);
 		void AddDependentCard(Card card);
 		void RemoveDependentCard(Card card);
 

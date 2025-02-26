@@ -77,6 +77,15 @@ namespace DeckSwipe.CardModel {
 			dependentCards.Remove(card);
 		}
 
-	}
+        public void PreviewLeftDecision(Game controller)
+        {
+            leftSwipeOutcome.Preview(controller);
+        }
+
+        public void PreviewRightDecision(Game controller)
+        {
+            rightSwipeOutcome.Preview(controller);
+        }
+    }
 
 }

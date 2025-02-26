@@ -33,6 +33,11 @@ namespace DeckSwipe.CardModel {
 			controller.CardActionPerformed();
 		}
 
-	}
+        public void Preview(Game controller)
+        {
+            statsModification.Preview();
+        }
+
+    }
 
 }
