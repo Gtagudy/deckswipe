@@ -29,6 +29,7 @@ namespace DeckSwipe.CardModel {
 		private readonly List<ICardPrerequisite> prerequisites;
 		private readonly ActionOutcome leftSwipeOutcome;
 		private readonly ActionOutcome rightSwipeOutcome;
+		private readonly ActionOutcome swipeOutcome;
 
 		private Dictionary<ICard, ICardPrerequisite> unsatisfiedPrerequisites;
 		private List<Card> dependentCards = new List<Card>();
@@ -47,6 +48,7 @@ namespace DeckSwipe.CardModel {
 			this.character = character;
 			leftSwipeOutcome = leftOutcome;
 			rightSwipeOutcome = rightOutcome;
+			swipeOutcome = new ActionOutcome();
 			this.prerequisites = prerequisites;
 		}
 
@@ -91,6 +93,16 @@ namespace DeckSwipe.CardModel {
             //    card.CheckPrerequisite(this, controller.CardStorage);
             //}
             rightSwipeOutcome.Preview(controller);
+        }
+
+        public void PreviewReset(Game controller)
+        {
+            //progress.Status |= CardStatus.RightActionTaken;
+            //foreach (Card card in dependentCards)
+            //{
+            //    card.CheckPrerequisite(this, controller.CardStorage);
+            //}
+            swipeOutcome.Preview(controller);
         }
 
         public void CheckPrerequisite(ICard dependency, CardStorage cardStorage) {

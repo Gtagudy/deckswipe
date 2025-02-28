@@ -135,6 +135,10 @@ namespace DeckSwipe.World {
             {
                 card.PreviewRightDecision(Controller);
             }
+			else
+			{
+				card.PreviewReset(Controller);
+			}
         }
 
 		public void EndDrag() {
@@ -164,6 +168,7 @@ namespace DeckSwipe.World {
 				}
 				else if (animationState == AnimationState.Idle) {
 					animationState = AnimationState.Converging;
+					card.PreviewReset(Controller);
 				}
 			}
 			animationSuspended = false;
