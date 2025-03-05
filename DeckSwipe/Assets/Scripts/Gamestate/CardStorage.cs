@@ -16,12 +16,12 @@ namespace DeckSwipe.Gamestate {
 		private readonly Sprite defaultSprite;
 		private readonly bool loadRemoteCollectionFirst;
 
-		public Dictionary<int, Card> Cards { get; private set; }
-		public Dictionary<string, SpecialCard> SpecialCards { get; private set; }
+		[SerializeField] public Dictionary<int, Card> Cards { get; private set; }
+		[SerializeField] public Dictionary<string, SpecialCard> SpecialCards { get; private set; }
 
 		public Task CardCollectionImport { get; }
 
-		private List<Card> drawableCards = new List<Card>();
+		[SerializeField] private List<Card> drawableCards = new List<Card>();
 
 		public CardStorage(Sprite defaultSprite, bool loadRemoteCollectionFirst) {
 			this.defaultSprite = defaultSprite;

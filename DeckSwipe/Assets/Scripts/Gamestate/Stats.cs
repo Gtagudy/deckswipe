@@ -68,7 +68,5 @@ namespace DeckSwipe.Gamestate {
 		private static int ClampValue(int value) {
 			return Mathf.Clamp(value, 0, _maxStatValue);
 		}
-		
 	}
-	
 }

@@ -1,9 +1,9 @@
 {
     "id": 8,
     "characterId": 7,
-    "cardText": "Sample card 1",
+    "cardText": "Steward! Coal production is starting to decrease, shall we sacrifice some bread for coal.",
     "leftAction": {
-        "text": "Sample action 1L",
+        "text": "Very well",
         "statsModification": {
             "coal": 4,
             "food": -2,
@@ -14,7 +14,7 @@
         "specialFollowup": []
     },
     "rightAction": {
-        "text": "Sample action 1R",
+        "text": "No, bread is for the people not furnaces!",
         "statsModification": {
             "coal": -2,
             "food": 2,

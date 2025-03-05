@@ -1,7 +1,7 @@
 {
     "id": 0,
     "characterId": 0,
-    "cardText": "This is a test card text that should appear on screen.",
+    "cardText": "This is a test card text that should appear on screen, not a dummy.",
     "leftAction": {
         "text": "Here goes",
         "statsModification": {

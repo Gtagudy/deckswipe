@@ -1,25 +1,25 @@
 {
     "id": 9,
     "characterId": 8,
-    "cardText": "Cample card 2",
+    "cardText": "Steward it seems we have an excess of resources, the people urge we share our bounty",
     "leftAction": {
-        "text": "Sample action 2L",
+        "text": "Fine, make some homes extra cozy.",
         "statsModification": {
             "coal": -3,
             "food": 0,
             "health": 0,
-            "hope": 0
+            "hope": 4
         },
         "followup": [],
         "specialFollowup": []
     },
     "rightAction": {
-        "text": "Sample action 2R",
+        "text": "Fine, share some excess food.",
         "statsModification": {
             "coal": 0,
             "food": -4,
             "health": -2,
-            "hope": 4
+            "hope": 5
         },
         "followup": [],
         "specialFollowup": []
