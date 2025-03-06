@@ -3,11 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MainMenu : MonoBehaviour
+public class SwitchScene : MonoBehaviour
 {
-    [SerializeField]
-    public string sceneName;
-    public void NextScene()
+    public void NextScene(string sceneName)
     {
         try
         {
