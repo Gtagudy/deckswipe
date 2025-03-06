@@ -29,7 +29,12 @@ namespace DeckSwipe {
 		private int saveIntervalCounter;
 		private CardDrawQueue cardDrawQueue = new CardDrawQueue();
 
-		private void Awake() {
+		#region Weather
+		public bool WeatherActive = false;
+		public bool Snowstorm = false;
+        #endregion
+
+        private void Awake() {
 			// Listen for Escape key ('Back' on Android) that suspends the game on Android
 			// or ends it on any other platform
 			#if UNITY_ANDROID
@@ -68,6 +73,8 @@ namespace DeckSwipe {
 
 		private void StartGameplayLoop() {
 			Stats.ResetStats();
+			WeatherActive = false;
+			Snowstorm = false;
 			ProgressDisplay.SetDaysSurvived(0);
 			DrawNextCard();
 		}
