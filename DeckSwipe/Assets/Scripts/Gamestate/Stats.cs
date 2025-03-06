@@ -44,8 +44,28 @@ namespace DeckSwipe.Gamestate {
 			Health = ClampValue(_startingHealth);
 			Hope = ClampValue(_startingHope);
 		}
-		
-		private static void TriggerAllListeners() {
+
+        public static void ApplyPreview(StatsModification mod)
+        {
+            TriggerAllPreview(mod);
+        }
+
+        private static void TriggerAllPreview(StatsModification mod)
+        {
+            for (int i = 0; i < _changeListeners.Count; i++)
+            {
+                if (_changeListeners[i] == null)
+                {
+                    _changeListeners.RemoveAt(i);
+                }
+                else
+                {
+                    _changeListeners[i].TriggerPreview(mod);
+                }
+            }
+        }
+
+        private static void TriggerAllListeners() {
 			for (int i = 0; i < _changeListeners.Count; i++) {
 				if (_changeListeners[i] == null) {
 					_changeListeners.RemoveAt(i);

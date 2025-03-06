@@ -126,7 +126,20 @@ namespace DeckSwipe.World {
 			float alphaCoord = (transform.position.x - snapPosition.x) / (swipeThreshold / 2);
 			Util.SetTextAlpha(leftActionText, -alphaCoord);
 			Util.SetTextAlpha(rightActionText, alphaCoord);
-		}
+            if (transform.position.x < snapPosition.x - swipeThreshold)
+            {
+                card.PreviewLeftDecision(Controller);
+			
+            }
+            else if (transform.position.x > snapPosition.x + swipeThreshold)
+            {
+                card.PreviewRightDecision(Controller);
+            }
+			else
+			{
+				card.PreviewReset(Controller);
+			}
+        }
 
 		public void EndDrag() {
 			animationStartPosition = transform.position;
@@ -155,6 +168,7 @@ namespace DeckSwipe.World {
 				}
 				else if (animationState == AnimationState.Idle) {
 					animationState = AnimationState.Converging;
+					card.PreviewReset(Controller);
 				}
 			}
 			animationSuspended = false;

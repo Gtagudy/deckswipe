@@ -6,6 +6,10 @@
 			controller.RestartGame();
 		}
 
-	}
+        public void Preview(Game controller)
+        {
+            return;
+        }
+    }
 
 }

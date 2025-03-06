@@ -23,6 +23,12 @@ namespace DeckSwipe.CardModel {
 			Stats.ApplyModification(this);
 		}
 
-	}
+        public void Preview()
+        {
+            // TODO Pass through status effects
+            Stats.ApplyPreview(this);
+        }
+
+    }
 
 }

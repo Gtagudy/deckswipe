@@ -28,6 +28,7 @@ namespace DeckSwipe.CardModel {
 
 		private readonly IActionOutcome leftSwipeOutcome;
 		private readonly IActionOutcome rightSwipeOutcome;
+		private readonly IActionOutcome swipeOutcome;
 
 		private List<Card> dependentCards = new List<Card>();
 
@@ -44,7 +45,8 @@ namespace DeckSwipe.CardModel {
 			this.character = character;
 			leftSwipeOutcome = leftOutcome;
 			rightSwipeOutcome = rightOutcome;
-		}
+            swipeOutcome = new ActionOutcome();
+        }
 
 		public void CardShown(Game controller) {
 			progress.Status |= CardStatus.CardShown;
@@ -77,6 +79,20 @@ namespace DeckSwipe.CardModel {
 			dependentCards.Remove(card);
 		}
 
-	}
+        public void PreviewLeftDecision(Game controller)
+        {
+            leftSwipeOutcome.Preview(controller);
+        }
+
+        public void PreviewRightDecision(Game controller)
+        {
+            rightSwipeOutcome.Preview(controller);
+        }
+
+        public void PreviewReset(Game controller)
+        {
+            swipeOutcome.Preview(controller);
+        }
+    }
 
 }
