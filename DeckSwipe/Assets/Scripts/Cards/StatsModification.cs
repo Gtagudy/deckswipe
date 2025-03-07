@@ -23,10 +23,28 @@ namespace DeckSwipe.CardModel {
 			Stats.ApplyModification(this);
 		}
 
+        public void PerformSnowstorm()
+        {
+            // TODO Pass through status effects
+            coal -= 2;
+            health -= 2;
+            Stats.ApplyModification(this);
+        }
+
         public void Preview()
         {
             // TODO Pass through status effects
             Stats.ApplyPreview(this);
+        }
+
+        public void PreviewSnowstorm()
+        {
+            // TODO Pass through status effects
+            coal -= 2;
+            health -= 2;
+            Stats.ApplyPreview(this);
+            coal += 2;
+            health += 2;
         }
 
     }

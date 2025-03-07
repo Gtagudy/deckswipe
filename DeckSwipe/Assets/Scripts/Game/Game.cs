@@ -29,7 +29,12 @@ namespace DeckSwipe {
 		private int saveIntervalCounter;
 		private CardDrawQueue cardDrawQueue = new CardDrawQueue();
 
-		private void Awake() {
+		#region Weather
+		public bool WeatherActive = false;
+		public bool Snowstorm = false;
+        #endregion
+
+        private void Awake() {
 			// Listen for Escape key ('Back' on Android) that suspends the game on Android
 			// or ends it on any other platform
 			#if UNITY_ANDROID
@@ -68,6 +73,8 @@ namespace DeckSwipe {
 
 		private void StartGameplayLoop() {
 			Stats.ResetStats();
+			WeatherActive = false;
+			Snowstorm = false;
 			ProgressDisplay.SetDaysSurvived(0);
 			DrawNextCard();
 		}
@@ -88,6 +95,13 @@ namespace DeckSwipe {
 			else {
 				IFollowup followup = cardDrawQueue.Next();
 				ICard card = followup?.Fetch(cardStorage) ?? cardStorage.Random();
+				if (card.CardText.Contains("(Weather)") && WeatherActive)
+				{
+					print("weather while already active");
+					DrawNextCard();
+					return;
+				}
+				else if (card.CardText.Contains("(Weather)")) WeatherActive = true;
 				SpawnCard(card);
 			}
 			saveIntervalCounter = (saveIntervalCounter - 1) % _saveInterval;

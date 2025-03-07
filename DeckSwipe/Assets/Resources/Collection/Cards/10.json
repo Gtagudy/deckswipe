@@ -1,0 +1,39 @@
+{
+    "id": 10,
+    "characterId": 9,
+    "cardText": "(Weather) You can see a snow storm on the horizon. Start preparing for it.",
+    "leftAction": {
+        "text": "",
+        "statsModification": {
+            "coal": 0,
+            "food": 0,
+            "health": 0,
+            "hope": 0
+        },
+        "followup": [
+            {
+                "id": 11,
+                "delay": 3
+            }
+        ],
+        "specialFollowup": []
+    },
+    "rightAction": {
+        "text": "",
+        "statsModification": {
+            "coal": 0,
+            "food": 0,
+            "health": 0,
+            "hope": 0
+        },
+        "followup": [
+            {
+                "id": 11,
+                "delay": 3
+            }
+        ],
+        "specialFollowup": []
+    },
+    "cardPrerequisites": [],
+    "specialCardPrerequisites": []
+}

@@ -1,0 +1,48 @@
+{
+    "id": 12,
+    "characterId": 9,
+    "cardText": "The snow storm seems to be ending.",
+    "leftAction": {
+        "text": "",
+        "statsModification": {
+            "coal": 0,
+            "food": 0,
+            "health": 0,
+            "hope": 0
+        },
+        "followup": [],
+        "specialFollowup": [
+            {
+                "id": "snowEnd",
+                "delay": 0
+            }
+        ]
+    },
+    "rightAction": {
+        "text": "",
+        "statsModification": {
+            "coal": 0,
+            "food": 0,
+            "health": 0,
+            "hope": 0
+        },
+        "followup": [],
+        "specialFollowup": [
+            {
+                "id": "snowEnd",
+                "delay": 0
+            }
+        ]
+    },
+    "cardPrerequisites": [
+        {
+            "id": -1,
+            "status": [
+                "CardShown",
+                "RightActionTaken",
+                "LeftActionTaken"
+            ]
+        }
+    ],
+    "specialCardPrerequisites": []
+}

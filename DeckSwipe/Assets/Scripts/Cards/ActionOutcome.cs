@@ -26,15 +26,38 @@ namespace DeckSwipe.CardModel {
 		}
 
 		public void Perform(Game controller) {
-			statsModification.Perform();
+			if (controller.Snowstorm)
+			{
+                statsModification.PerformSnowstorm();
+            }
+			else statsModification.Perform();
 			if (followup != null) {
-				controller.AddFollowupCard(followup);
+				if (followup is SpecialFollowup)
+				{
+					SpecialFollowup weatherCheck = (SpecialFollowup) followup;
+					if (weatherCheck.id == "snowStart")
+					{
+						controller.Snowstorm = true;
+						//controller.WeatherActive = true;
+                        controller.AddFollowupCard(new Followup(12, 5));
+                    }
+					else if (weatherCheck.id == "snowEnd")
+					{
+						controller.Snowstorm = false;
+						controller.WeatherActive = false;
+					}
+				}
+				else controller.AddFollowupCard(followup);
 			}
 			controller.CardActionPerformed();
 		}
 
         public void Preview(Game controller)
         {
+            if (controller.Snowstorm)
+            {
+                statsModification.PreviewSnowstorm();
+            }
             statsModification.Preview();
         }
 

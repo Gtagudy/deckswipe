@@ -1,0 +1,46 @@
+{
+    "id": 11,
+    "characterId": 9,
+    "cardText": "The snow storm is here. It looks like it will last a few days.",
+    "leftAction": {
+        "text": "",
+        "statsModification": {
+            "coal": 0,
+            "food": 0,
+            "health": 0,
+            "hope": 0
+        },
+        "followup": [],
+        "specialFollowup": [
+            {
+                "id": "snowStart"
+            }
+        ]
+    },
+    "rightAction": {
+        "text": "",
+        "statsModification": {
+            "coal": 0,
+            "food": 0,
+            "health": 0,
+            "hope": 0
+        },
+        "followup": [],
+        "specialFollowup": [
+            {
+                "id": "snowStart"
+            }
+        ]
+    },
+    "cardPrerequisites": [
+        {
+            "id": -1,
+            "status": [
+                "CardShown",
+                "RightActionTaken",
+                "LeftActionTaken"
+            ]
+        }
+    ],
+    "specialCardPrerequisites": []
+}
