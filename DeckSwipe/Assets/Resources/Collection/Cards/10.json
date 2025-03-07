@@ -1,7 +1,7 @@
 {
     "id": 10,
     "characterId": 9,
-    "cardText": "You can see a snow storm on the horizon. Start preparing for it.",
+    "cardText": "(Weather) You can see a snow storm on the horizon. Start preparing for it.",
     "leftAction": {
         "text": "",
         "statsModification": {
@@ -35,9 +35,5 @@
         "specialFollowup": []
     },
     "cardPrerequisites": [],
-    "specialCardPrerequisites": [
-        {
-            "id": "Weather"
-        }
-    ]
+    "specialCardPrerequisites": []
 }

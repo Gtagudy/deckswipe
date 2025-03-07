@@ -95,6 +95,13 @@ namespace DeckSwipe {
 			else {
 				IFollowup followup = cardDrawQueue.Next();
 				ICard card = followup?.Fetch(cardStorage) ?? cardStorage.Random();
+				if (card.CardText.Contains("(Weather)") && WeatherActive)
+				{
+					print("weather while already active");
+					DrawNextCard();
+					return;
+				}
+				else if (card.CardText.Contains("(Weather)")) WeatherActive = true;
 				SpawnCard(card);
 			}
 			saveIntervalCounter = (saveIntervalCounter - 1) % _saveInterval;

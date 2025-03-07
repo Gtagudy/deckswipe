@@ -38,7 +38,7 @@ namespace DeckSwipe.CardModel {
 					if (weatherCheck.id == "snowStart")
 					{
 						controller.Snowstorm = true;
-						controller.WeatherActive = true;
+						//controller.WeatherActive = true;
                         controller.AddFollowupCard(new Followup(12, 5));
                     }
 					else if (weatherCheck.id == "snowEnd")
