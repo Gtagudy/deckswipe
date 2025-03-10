@@ -7,7 +7,7 @@ namespace DeckSwipe.CardModel {
 
 	public class Card : ICard {
 
-		public string CardText { get; }
+        public string CardText { get; }
 		public string LeftSwipeText { get; }
 		public string RightSwipeText { get; }
 
