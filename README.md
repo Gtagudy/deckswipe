@@ -28,3 +28,33 @@ All content published in this repository, be it software, in source code or bina
 
 	* `DeckSwipe/Assets/Dependencies/TextMesh Pro/*`
 
+# Our Contribution (Brisk)
+The group, Brisk, chose this project as our 3 week class assignment to modify and add changes to. Below we will list all the contributions we have made including project structure changes, mode chnages, mechanics, etc.
+
+## Project Structure
+(Fill out here)
+
+## Tackling Issues (left by the original team in the original repo)
+There are only a couple of issues in the original repo. Brisk decided to take most of these and fix them as part of our goals to modify the project.
+
+__Issues__
+- *Issue 1*: Eliminate need for dummy cards. To make other cards not randomly drawable, a dummy card was needed. We simply added a drawable property to the cards so they wouldn't need it as suggested by the issue.
+- *Issue 2*: Visual preview of action outcomes. Players didn't have a way to see how the choices will affect their stats. They just swiped and it would take affect. We fixed this by changing the progress bar on a stat to show red for negative effects and green for negative effects.
+- *Issue 4*: Update ReadME. ReadME needed a general update as well as updates with our (Brisk's) contributions. :)
+
+## Other Changes
+Outside of fixes to the proposed issues, we came up with a handful of changes we wnated to add to the game to make flesh it out more and make it more fun and interactive.
+
+__Additional Changes (Baseline Goals)__
+- *Mechanics Expansion*: We wanted to add more substance to the game. We came up with a couple on concepts:
+  - A.) More stats for the player to manage - We settled on adding population management
+  - B.) incoming events - Incoming events are just random events that occur. They're just a random card that can be pulled and could have an affect on the player's stats. Ultimately, the best outcome would have been if we could have provided some visual effect change or some seasonal mode to make the game more challenging.
+  
+- *Main Menu*: The game started up on the gameplay scene. To feel more complete and put together, we thoguht to add a Main Menu where users could choose between Survival Mode or Endless Mode.
+  
+- *New Game Mode*: The game only supported endless mode. We thought it would be way more interesting if the player could choose between a Survival mode where they had to make it to (number) days and hit a win screen. From there, they could switch to naother mode if they wanted. Endless mode was already a part of and was the default of DecksSwipe before we got to it.
+  
+- *More Cards*: There just weren't enouh cards to maintain player interest. There were also a lot of placeholder or dummy cards. We filled those out and added more of our own (including incoming events).
+
+
+
