@@ -1,0 +1,29 @@
+{
+    "id": 13,
+    "characterId": 7,
+    "cardText": "(Timed) Split decision test",
+    "leftAction": {
+        "text": "Left decision",
+        "statsModification": {
+            "coal": 4,
+            "food": -3,
+            "health": -2,
+            "hope": 1
+        },
+        "followup": [],
+        "specialFollowup": []
+    },
+    "rightAction": {
+        "text": "Left decision",
+        "statsModification": {
+            "coal": -2,
+            "food": 1,
+            "health": 4,
+            "hope": -3
+        },
+        "followup": [],
+        "specialFollowup": []
+    },
+    "cardPrerequisites": [],
+    "specialCardPrerequisites": []
+}
