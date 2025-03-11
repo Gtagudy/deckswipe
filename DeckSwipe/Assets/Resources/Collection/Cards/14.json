@@ -1,25 +1,25 @@
 {
-    "id": 0,
-    "characterId": 0,
-    "cardText": "You stumble upon a mysterious artifact. What will you do with it?",
+    "id": 14,
+    "characterId": 1,
+    "cardText": "You find a hidden cache of supplies. How will you use them?",
     "leftAction": {
-        "text": "Destroy it",
+        "text": "Share with others",
         "statsModification": {
             "coal": 0,
-            "food": 0,
-            "health": -3,
-            "hope": -3
+            "food": 2,
+            "health": 1,
+            "hope": 3
         },
         "followup": [],
         "specialFollowup": []
     },
     "rightAction": {
-        "text": "Study it",
+        "text": "Keep for yourself",
         "statsModification": {
             "coal": 0,
-            "food": 0,
-            "health": 0,
-            "hope": 3
+            "food": 4,
+            "health": 2,
+            "hope": -1
         },
         "followup": [],
         "specialFollowup": []

@@ -1,25 +1,25 @@
 {
-    "id": 0,
+    "id": 16,
     "characterId": 0,
-    "cardText": "You stumble upon a mysterious artifact. What will you do with it?",
+    "cardText": "You meet a stranger who offers to trade with you. What will you do?",
     "leftAction": {
-        "text": "Destroy it",
+        "text": "Decline the offer",
         "statsModification": {
             "coal": 0,
             "food": 0,
-            "health": -3,
-            "hope": -3
+            "health": 0,
+            "hope": -2
         },
         "followup": [],
         "specialFollowup": []
     },
     "rightAction": {
-        "text": "Study it",
+        "text": "Accept the trade",
         "statsModification": {
-            "coal": 0,
-            "food": 0,
+            "coal": 3,
+            "food": -1,
             "health": 0,
-            "hope": 3
+            "hope": 2
         },
         "followup": [],
         "specialFollowup": []

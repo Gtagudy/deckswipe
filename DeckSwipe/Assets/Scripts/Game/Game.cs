@@ -32,7 +32,13 @@ namespace DeckSwipe {
 			get { return cardStorage; }
 		}
 
-		public Gamemode Currentmode { get; private set; } = Gamemode.Survival;
+		public static Gamemode SelectedGameMode { get; private set; } = Gamemode.Survival;
+
+		public Gamemode Currentmode
+		{
+			get => SelectedGameMode;
+			private set => SelectedGameMode = value;
+		}
 
 		private CardStorage cardStorage;
 		private ProgressStorage progressStorage;
@@ -68,8 +74,14 @@ namespace DeckSwipe {
 
         }
 
+        public void SetGameMode(int modeIndex)
+        {
+            Currentmode = (Gamemode)modeIndex;
+            Debug.Log($"Game mode set to: {Currentmode}");
 
-		private void Start() {
+        }
+
+        private void Start() {
 			CallbackWhenDoneLoading(StartGame);
 		}
 
@@ -86,43 +98,10 @@ namespace DeckSwipe {
 			StartGame();
 		}
 
-        public void SetGameMode(int modeIndex)
-        {
-            Currentmode = (Gamemode)modeIndex;
-            Debug.Log($"Game mode set to: {Currentmode}");
-
-			ResetGameState();
-
-			StartGame();
-        }
-
-
-        private void ResetGameState()
-        {
-            Debug.Log("Resetting game state to default values...");
-
-            Stats.ResetStats(); 
-
-            daysPassedPreviously = 0;
-            daysLastRun = 0;
-            saveIntervalCounter = 0;
-
-            cardDrawQueue.Clear();
-
-            WeatherActive = false;
-            Snowstorm = false;
-
-            ProgressDisplay.SetDaysSurvived(0);
-
-
-            if (timerPrefab != null)
-                timerPrefab.timerOn = false;
-
-            Debug.Log("Game state reset complete.");
-        }
 
         private void StartGameplayLoop() {
-			Stats.ResetStats();
+            Debug.Log($"Starting gameplay loop with mode: {Currentmode}");
+            Stats.ResetStats();
 			WeatherActive = false;
 			Snowstorm = false;
 			progressStorage.Progress.daysPassed = daysPassedPreviously;
@@ -173,13 +152,15 @@ namespace DeckSwipe {
 			int daysSurvived = (int)(progressStorage.Progress.daysPassed - daysPassedPreviously);
 
             ProgressDisplay.SetDaysSurvived(daysSurvived);
-			
-			if (Currentmode == Gamemode.Survival && daysSurvived >= DAYS_TO_WIN)
+            Debug.Log($"Game mode set to: {Currentmode}");
+
+            if (Currentmode == Gamemode.Survival && daysSurvived >= DAYS_TO_WIN)
 			{
 				WinGame();
 			} else
 			{
                 DrawNextCard();
+                Debug.Log($"Game mode set to: {Currentmode}");
             }
 				
 		}

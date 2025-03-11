@@ -1,25 +1,25 @@
 {
-    "id": 9,
-    "characterId": 8,
-    "cardText": "You see an abandoned puppy, take it in?",
+    "id": 15,
+    "characterId": 0,
+    "cardText": "(Weather) A harsh thunder storm is approaching. How will you prepare?",
     "leftAction": {
-        "text": "Yes",
+        "text": "Seek shelter",
         "statsModification": {
-            "coal": 0,
+            "coal": -1,
             "food": -2,
             "health": 0,
-            "hope": 5
+            "hope": 0
         },
         "followup": [],
         "specialFollowup": []
     },
     "rightAction": {
-        "text": "No",
+        "text": "Try to find supplies",
         "statsModification": {
-            "coal": 0,
-            "food": 0,
-            "health": -5,
-            "hope": -5
+            "coal": 2,
+            "food": 3,
+            "health": -1,
+            "hope": 0
         },
         "followup": [],
         "specialFollowup": []

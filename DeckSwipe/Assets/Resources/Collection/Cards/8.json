@@ -1,23 +1,23 @@
 {
     "id": 8,
     "characterId": 7,
-    "cardText": "Sample card 1",
+    "cardText": "You find a map that leads to a potential safe haven. What will you do?",
     "leftAction": {
-        "text": "Sample action 1L",
+        "text": "Follow the map",
         "statsModification": {
             "coal": 4,
-            "food": -2,
+            "food": 2,
             "health": -4,
-            "hope": 0
+            "hope": 1
         },
         "followup": [],
         "specialFollowup": []
     },
     "rightAction": {
-        "text": "Sample action 1R",
+        "text": "Ignore the map",
         "statsModification": {
-            "coal": -2,
-            "food": 2,
+            "coal": -4,
+            "food": 0,
             "health": 4,
             "hope": 0
         },
