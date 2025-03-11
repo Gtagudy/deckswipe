@@ -32,7 +32,15 @@ All content published in this repository, be it software, in source code or bina
 The group, Brisk, chose this project as our 3 week class assignment to modify and add changes to. Below we will list all the contributions we have made including project structure changes, mode chnages, mechanics, etc.
 
 ## Project Structure
-(Fill out here)
+Project structure was pretty unique to itself before we got our hands on it, but for a general developer it was hard to navigate and understand the code base. 
+
+**Before**
+- Had scripts, resources, and prefabs all thrown together, no organization
+- Chaotic and hard ot understand
+
+**After**
+- More in line with standardized Unity practices.
+- Much more traversable and immediately understandable.
 
 ## Tackling Issues (left by the original team in the original repo)
 There are only a couple of issues in the original repo. Brisk decided to take most of these and fix them as part of our goals to modify the project.
