@@ -24,6 +24,7 @@ namespace DeckSwipe {
 		public Vector3 spawnPosition;
 		public Sprite defaultCharacterSprite;
 		public bool loadRemoteCollectionFirst;
+		public Timer timerPrefab;
 
 		public CardStorage CardStorage {
 			get { return cardStorage; }
@@ -99,6 +100,7 @@ namespace DeckSwipe {
 		}
 
 		public void DrawNextCard() {
+			timerPrefab.timerOn = false;
 			if (Stats.Coal == 0) {
 				SpawnCard(cardStorage.SpecialCard("gameover_coal"));
 			}
@@ -121,7 +123,11 @@ namespace DeckSwipe {
 					return;
 				}
 				else if (card.CardText.Contains("(Weather)")) WeatherActive = true;
-				SpawnCard(card);
+                if (card.CardText.Contains("(Timed)"))
+				{
+					timerPrefab.timerOn = true;
+                }
+                SpawnCard(card);
 			}
 			saveIntervalCounter = (saveIntervalCounter - 1) % _saveInterval;
 			if (saveIntervalCounter == 0) {
@@ -162,6 +168,7 @@ namespace DeckSwipe {
 			cardInstance.Card = card;
 			cardInstance.snapPosition.y = spawnPosition.y;
 			cardInstance.Controller = this;
+
 		}
 
 	}
