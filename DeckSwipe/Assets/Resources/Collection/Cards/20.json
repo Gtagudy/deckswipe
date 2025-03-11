@@ -1,25 +1,25 @@
 {
-    "id": 0,
+    "id": 20,
     "characterId": 0,
-    "cardText": "You stumble upon a mysterious artifact. What will you do with it?",
+    "cardText": "A critical infrastructure failure occurs. How will you respond?",
     "leftAction": {
-        "text": "Destroy it",
+        "text": "Reroute resources to repair",
         "statsModification": {
-            "coal": 0,
+            "coal": -2,
             "food": 0,
-            "health": -3,
-            "hope": -3
+            "health": 1,
+            "hope": 1
         },
         "followup": [],
         "specialFollowup": []
     },
     "rightAction": {
-        "text": "Study it",
+        "text": "Prioritize heating over repairs",
         "statsModification": {
-            "coal": 0,
-            "food": 0,
+            "coal": -5,
+            "food": -2,
             "health": 0,
-            "hope": 3
+            "hope": -1
         },
         "followup": [],
         "specialFollowup": []

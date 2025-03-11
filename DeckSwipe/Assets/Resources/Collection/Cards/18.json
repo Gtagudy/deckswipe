@@ -1,0 +1,29 @@
+{
+    "id": 18,
+    "characterId": 0,
+    "cardText": "You heard talk of a nearby village with an abundance of materials and supplies.",
+    "leftAction": {
+        "text": "Check out the rumors",
+        "statsModification": {
+            "coal": 5,
+            "food": 5,
+            "health": 5,
+            "hope": 5
+        },
+        "followup": [],
+        "specialFollowup": []
+    },
+    "rightAction": {
+        "text": "Forage on your own",
+        "statsModification": {
+            "coal": 3,
+            "food": 2,
+            "health": 1,
+            "hope": 2
+        },
+        "followup": [],
+        "specialFollowup": []
+    },
+    "cardPrerequisites": [],
+    "specialCardPrerequisites": []
+}

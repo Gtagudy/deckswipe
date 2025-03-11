@@ -1,25 +1,25 @@
 {
-    "id": 0,
+    "id": 19,
     "characterId": 0,
-    "cardText": "You stumble upon a mysterious artifact. What will you do with it?",
+    "cardText": "A group of refugees arrive seeking shelter. What do you do?",
     "leftAction": {
-        "text": "Destroy it",
+        "text": "Welcome them",
         "statsModification": {
-            "coal": 0,
-            "food": 0,
-            "health": -3,
-            "hope": -3
+            "coal":0,
+            "food": -5,
+            "health": 1,
+            "hope": 3
         },
         "followup": [],
         "specialFollowup": []
     },
     "rightAction": {
-        "text": "Study it",
+        "text": "Turn them away",
         "statsModification": {
             "coal": 0,
             "food": 0,
             "health": 0,
-            "hope": 3
+            "hope": -3
         },
         "followup": [],
         "specialFollowup": []

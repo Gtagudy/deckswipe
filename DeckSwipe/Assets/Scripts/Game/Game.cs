@@ -5,12 +5,21 @@ using DeckSwipe.Gamestate.Persistence;
 using DeckSwipe.World;
 using Outfrost;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 namespace DeckSwipe {
+
+	public enum Gamemode
+	{
+		Survival,
+		Endless
+	}
 
 	public class Game : MonoBehaviour {
 
 		private const int _saveInterval = 8;
+		private const int DAYS_TO_WIN = 5;
 
 		public InputDispatcher inputDispatcher;
 		public CardBehaviour cardPrefab;
@@ -21,6 +30,14 @@ namespace DeckSwipe {
 
 		public CardStorage CardStorage {
 			get { return cardStorage; }
+		}
+
+		public static Gamemode SelectedGameMode { get; private set; } = Gamemode.Survival;
+
+		public Gamemode Currentmode
+		{
+			get => SelectedGameMode;
+			private set => SelectedGameMode = value;
 		}
 
 		private CardStorage cardStorage;
@@ -54,9 +71,17 @@ namespace DeckSwipe {
 			progressStorage = new ProgressStorage(cardStorage);
 
 			GameStartOverlay.FadeOutCallback = StartGameplayLoop;
-		}
 
-		private void Start() {
+        }
+
+        public void SetGameMode(int modeIndex)
+        {
+            Currentmode = (Gamemode)modeIndex;
+            Debug.Log($"Game mode set to: {Currentmode}");
+
+        }
+
+        private void Start() {
 			CallbackWhenDoneLoading(StartGame);
 		}
 
@@ -65,6 +90,7 @@ namespace DeckSwipe {
 			GameStartOverlay.StartSequence(progressStorage.Progress.daysPassed, daysLastRun);
 		}
 
+
 		public void RestartGame() {
 			progressStorage.Save();
 			daysLastRun = progressStorage.Progress.daysPassed - daysPassedPreviously;
@@ -72,10 +98,13 @@ namespace DeckSwipe {
 			StartGame();
 		}
 
-		private void StartGameplayLoop() {
-			Stats.ResetStats();
+
+        private void StartGameplayLoop() {
+            Debug.Log($"Starting gameplay loop with mode: {Currentmode}");
+            Stats.ResetStats();
 			WeatherActive = false;
 			Snowstorm = false;
+			progressStorage.Progress.daysPassed = daysPassedPreviously;
 			ProgressDisplay.SetDaysSurvived(0);
 			DrawNextCard();
 		}
@@ -119,9 +148,21 @@ namespace DeckSwipe {
 		public void CardActionPerformed() {
 			progressStorage.Progress.AddDays(Random.Range(0.5f, 1.5f),
 					daysPassedPreviously);
-			ProgressDisplay.SetDaysSurvived(
-					(int)(progressStorage.Progress.daysPassed - daysPassedPreviously));
-			DrawNextCard();
+
+			int daysSurvived = (int)(progressStorage.Progress.daysPassed - daysPassedPreviously);
+
+            ProgressDisplay.SetDaysSurvived(daysSurvived);
+            Debug.Log($"Game mode set to: {Currentmode}");
+
+            if (Currentmode == Gamemode.Survival && daysSurvived >= DAYS_TO_WIN)
+			{
+				WinGame();
+			} else
+			{
+                DrawNextCard();
+                Debug.Log($"Game mode set to: {Currentmode}");
+            }
+				
 		}
 
 		public void AddFollowupCard(IFollowup followup) {
@@ -142,6 +183,23 @@ namespace DeckSwipe {
 
 		}
 
-	}
+		private void WinGame()
+		{
+			Debug.Log("Congratulations! you survived for " + DAYS_TO_WIN + " days! Check out our other game mode: Endless!");
+			progressStorage.ResetProgress();
+
+			progressStorage.Save();
+
+			LoadWinScreen();
+		}
+
+        private void LoadWinScreen()
+        {
+            Debug.Log("Loading WinScreen...");
+            PlayerPrefs.SetInt("GameWon", 1);
+            SceneManager.LoadScene("WinScreen");
+        }
+
+    }
 
 }
