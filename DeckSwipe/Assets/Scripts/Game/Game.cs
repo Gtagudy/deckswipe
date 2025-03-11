@@ -5,12 +5,14 @@ using DeckSwipe.Gamestate.Persistence;
 using DeckSwipe.World;
 using Outfrost;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 namespace DeckSwipe {
 
 	public enum Gamemode
 	{
-		Standard,
+		Survival,
 		Endless
 	}
 
@@ -30,7 +32,7 @@ namespace DeckSwipe {
 			get { return cardStorage; }
 		}
 
-		public Gamemode Currentmode { get; private set; } = Gamemode.Standard;
+		public Gamemode Currentmode { get; private set; } = Gamemode.Survival;
 
 		private CardStorage cardStorage;
 		private ProgressStorage progressStorage;
@@ -63,16 +65,9 @@ namespace DeckSwipe {
 			progressStorage = new ProgressStorage(cardStorage);
 
 			GameStartOverlay.FadeOutCallback = StartGameplayLoop;
-		}
 
-		public void SwitchMode(Gamemode newMode)
-		{
-			if (Currentmode != newMode)
-			{
-				Currentmode = newMode;
-				RestartGame();
-			}
-		}
+        }
+
 
 		private void Start() {
 			CallbackWhenDoneLoading(StartGame);
@@ -91,10 +86,46 @@ namespace DeckSwipe {
 			StartGame();
 		}
 
-		private void StartGameplayLoop() {
+        public void SetGameMode(int modeIndex)
+        {
+            Currentmode = (Gamemode)modeIndex;
+            Debug.Log($"Game mode set to: {Currentmode}");
+
+			ResetGameState();
+
+			StartGame();
+        }
+
+
+        private void ResetGameState()
+        {
+            Debug.Log("Resetting game state to default values...");
+
+            Stats.ResetStats(); 
+
+            daysPassedPreviously = 0;
+            daysLastRun = 0;
+            saveIntervalCounter = 0;
+
+            cardDrawQueue.Clear();
+
+            WeatherActive = false;
+            Snowstorm = false;
+
+            ProgressDisplay.SetDaysSurvived(0);
+
+
+            if (timerPrefab != null)
+                timerPrefab.timerOn = false;
+
+            Debug.Log("Game state reset complete.");
+        }
+
+        private void StartGameplayLoop() {
 			Stats.ResetStats();
 			WeatherActive = false;
 			Snowstorm = false;
+			progressStorage.Progress.daysPassed = daysPassedPreviously;
 			ProgressDisplay.SetDaysSurvived(0);
 			DrawNextCard();
 		}
@@ -143,9 +174,9 @@ namespace DeckSwipe {
 
             ProgressDisplay.SetDaysSurvived(daysSurvived);
 			
-			if (Currentmode == Gamemode.Standard && daysSurvived >= DAYS_TO_WIN)
+			if (Currentmode == Gamemode.Survival && daysSurvived >= DAYS_TO_WIN)
 			{
-				
+				WinGame();
 			} else
 			{
                 DrawNextCard();
@@ -169,6 +200,18 @@ namespace DeckSwipe {
 			cardInstance.snapPosition.y = spawnPosition.y;
 			cardInstance.Controller = this;
 
+		}
+
+		private void WinGame()
+		{
+			Debug.Log("Congratulations! you survived for " + DAYS_TO_WIN + " days! Check out our other game mode: Endless!");
+			LoadWinScreen();
+		}
+
+		private void LoadWinScreen()
+		{
+			Debug.Log("Loading WinScreen...");
+            SceneManager.LoadScene("WinScreen");
 		}
 
 	}
