@@ -1,6 +1,7 @@
 using System.IO;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace DeckSwipe.Gamestate.Persistence {
 	
@@ -54,6 +55,18 @@ namespace DeckSwipe.Gamestate.Persistence {
 			}
 			return null;
 		}
+
+		public void ResetProgress()
+		{
+            Debug.Log("Resetting game progress...");
+            Progress = new GameProgress();
+            Progress.AttachReferences(cardStorage);
+            cardStorage.ResolvePrerequisites();
+			SaveLocally();
+            Debug.Log("Game progress reset.");
+
+			SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
 		
 	}
 	

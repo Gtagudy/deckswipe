@@ -186,15 +186,20 @@ namespace DeckSwipe {
 		private void WinGame()
 		{
 			Debug.Log("Congratulations! you survived for " + DAYS_TO_WIN + " days! Check out our other game mode: Endless!");
+			progressStorage.ResetProgress();
+
+			progressStorage.Save();
+
 			LoadWinScreen();
 		}
 
-		private void LoadWinScreen()
-		{
-			Debug.Log("Loading WinScreen...");
+        private void LoadWinScreen()
+        {
+            Debug.Log("Loading WinScreen...");
+            PlayerPrefs.SetInt("GameWon", 1);
             SceneManager.LoadScene("WinScreen");
-		}
+        }
 
-	}
+    }
 
 }
