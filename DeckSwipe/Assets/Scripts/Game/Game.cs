@@ -123,6 +123,10 @@ namespace DeckSwipe {
 			else if (Stats.Hope == 0) {
 				SpawnCard(cardStorage.SpecialCard("gameover_hope"));
 			}
+			else if(Stats.Population == 0)
+			{
+				SpawnCard(cardStorage.SpecialCard("gameover_population"));
+			}
 			else {
 				IFollowup followup = cardDrawQueue.Next();
 				ICard card = followup?.Fetch(cardStorage) ?? cardStorage.Random();
