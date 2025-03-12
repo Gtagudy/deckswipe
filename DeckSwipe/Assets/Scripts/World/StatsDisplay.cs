@@ -12,6 +12,7 @@ namespace DeckSwipe.World {
 		public Image foodBar;
 		public Image healthBar;
 		public Image hopeBar;
+		public Image populationBar;
 		public float relativeMargin;
 		
 		private float minFillAmount;
@@ -47,6 +48,10 @@ namespace DeckSwipe.World {
             if (mod.hope > 0) hopeBar.color = Good;
             else if (mod.hope < 0) hopeBar.color = Bad;
             else hopeBar.color = Neutral;
+
+			if (mod.pop > 0) populationBar.color = Good;
+			else if(mod.pop < 0) populationBar.color = Bad;
+			else populationBar.color = Neutral;
         }
 		
 		public void TriggerUpdate() {
@@ -58,6 +63,8 @@ namespace DeckSwipe.World {
 			healthBar.color = Neutral;
 			hopeBar.fillAmount = Mathf.Lerp(minFillAmount, maxFillAmount, Stats.HopePercentage);
 			hopeBar.color = Neutral;
+			populationBar.fillAmount = Mathf.Lerp(minFillAmount, maxFillAmount, Stats.PopPercentage);
+			populationBar.color = Neutral;
 		}
 		
 	}

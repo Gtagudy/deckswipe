@@ -72,26 +72,12 @@ namespace DeckSwipe.Gamestate {
 		private void PopulateFallback() {
 			Cards = new Dictionary<int, Card>();
 			Character placeholderPerson = new Character("Placeholder Person", defaultSprite);
-			Cards.Add(0, new Card("Placeholder card 1",
-					"A",
-					"B",
+			Cards.Add(0, new Card("The Cold Settles, a new day starts",
+					"Lets work on the city today",
+					"Lets work on the people today",
 					placeholderPerson,
-					new ActionOutcome(-2, 4, -2, 2),
-					new ActionOutcome(2, 0, 2, -2),
-					new List<ICardPrerequisite>()));
-			Cards.Add(1, new Card("Placeholder card 2",
-					"A",
-					"B",
-					placeholderPerson,
-					new ActionOutcome(-1, -1, -1, -1),
-					new ActionOutcome(2, 2, 2, 2),
-					new List<ICardPrerequisite>()));
-			Cards.Add(2, new Card("Placeholder card 3",
-					"A",
-					"B",
-					placeholderPerson,
-					new ActionOutcome(1, 1, 0, -2),
-					new ActionOutcome(2, 2, -2, -4),
+					new ActionOutcome(4, 4, -2, -2, -1),
+					new ActionOutcome(-2, -4, 2, 3, 2),
 					new List<ICardPrerequisite>()));
 		}
 
@@ -123,6 +109,13 @@ namespace DeckSwipe.Gamestate {
 						_defaultGameOverCharacter,
 						new GameOverOutcome(),
 						new GameOverOutcome()));
+			}
+			if(!SpecialCards.ContainsKey("gameover_population"))
+			{
+				SpecialCards.Add("gameover_population", new SpecialCard("The streets in the city lay barren, its people lost to the cold or something worse.", "", "",
+					_defaultGameOverCharacter,
+					new GameOverOutcome(),
+					new GameOverOutcome()));
 			}
 		}
 

@@ -1,0 +1,15 @@
+{
+    "id": "gameover_population",
+    "characterId": -1,
+    "cardText": "The streets in the city lay barren, its people lost to the cold or something worse.",
+    "leftAction": {
+        "text": "",
+        "followup": [],
+        "specialFollowup": []
+    },
+    "rightAction": {
+        "text": "",
+        "followup": [],
+        "specialFollowup": []
+    }
+}
