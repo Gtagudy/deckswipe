@@ -77,31 +77,16 @@ namespace DeckSwipe.CardModel {
 
         public void PreviewLeftDecision(Game controller)
         {
-            //progress.Status |= CardStatus.LeftActionTaken;
-            //foreach (Card card in dependentCards)
-            //{
-            //    card.CheckPrerequisite(this, controller.CardStorage);
-            //}
             leftSwipeOutcome.Preview(controller);
         }
 
         public void PreviewRightDecision(Game controller)
         {
-            //progress.Status |= CardStatus.RightActionTaken;
-            //foreach (Card card in dependentCards)
-            //{
-            //    card.CheckPrerequisite(this, controller.CardStorage);
-            //}
             rightSwipeOutcome.Preview(controller);
         }
 
         public void PreviewReset(Game controller)
         {
-            //progress.Status |= CardStatus.RightActionTaken;
-            //foreach (Card card in dependentCards)
-            //{
-            //    card.CheckPrerequisite(this, controller.CardStorage);
-            //}
             swipeOutcome.Preview(controller);
         }
 

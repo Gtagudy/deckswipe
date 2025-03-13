@@ -10,7 +10,12 @@
             "health": 0,
             "hope": 0
         },
-        "followup": [],
+        "followup": [
+            {
+                "id": 12,
+                "delay": 2
+            }
+        ],
         "specialFollowup": []
     },
     "rightAction": {
@@ -21,7 +26,12 @@
             "health": -1,
             "hope": 0
         },
-        "followup": [],
+        "followup": [
+            {
+                "id": 12,
+                "delay": 2
+            }
+        ],
         "specialFollowup": []
     },
     "cardPrerequisites": [],
