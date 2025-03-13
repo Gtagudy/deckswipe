@@ -28,3 +28,12 @@ All content published in this repository, be it software, in source code or bina
 
 	* `DeckSwipe/Assets/Dependencies/TextMesh Pro/*`
 
+## Project Structure
+Project structure was pretty unique to itself before we got our hands on it, but for a general developer it was hard to navigate and understand the code base. 
+
+**Before**
+- Code somewhat difficult to understand and maintain
+
+**After**
+- More in line with common Unity practices
+- Much more traversable and intuitive to understand
